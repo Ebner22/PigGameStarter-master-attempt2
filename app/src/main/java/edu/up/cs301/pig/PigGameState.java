@@ -1,6 +1,6 @@
 package edu.up.cs301.pig;
 
-public class PigGameState {
+public class PigGameState extends GameState{
     private int turn;
     private int p1Score;
     private int p2Score;

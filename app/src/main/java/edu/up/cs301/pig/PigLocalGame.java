@@ -20,8 +20,10 @@ public class PigLocalGame extends LocalGame {
     /**
      * This ctor creates a new game state
      */
+    private PigGameState state;
+
     public PigLocalGame() {
-        //TODO  You will implement this constructor
+        state=new PigGameState();
     }
 
     /**

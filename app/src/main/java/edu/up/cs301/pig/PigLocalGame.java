@@ -58,7 +58,15 @@ public class PigLocalGame extends LocalGame {
         }
         else if (action instanceof PigRollAction){
             int dieNum=(int) (Math.random()*6+1);
-            
+            if (dieNum==1){
+                state.setRunningScore(0);
+            }
+            else{
+                state.setRunningScore(state.getRunningScore()+dieNum);
+                int t=(state.getTurn()+1)%players.length;
+                state.setTurn(t);
+            }
+            return true;
         }
         return false;
     }//makeMove

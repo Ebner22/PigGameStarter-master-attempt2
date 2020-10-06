@@ -16,7 +16,7 @@ import android.util.Log;
  * @version February 2016
  */
 public class PigLocalGame extends LocalGame {
-
+    
     /**
      * This ctor creates a new game state
      */

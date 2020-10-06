@@ -31,7 +31,9 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected boolean canMove(int playerIdx) {
-        //TODO  You will implement this method
+        if (playerIdx==state.getTurn()){
+            return true;
+        }
         return false;
     }
 
@@ -42,7 +44,22 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected boolean makeMove(GameAction action) {
-        //TODO  You will implement this method
+        if (action instanceof PigHoldAction){
+            if (state.getTurn()==0){
+                state.setP1Score(state.getP1Score()+state.getRunningScore());
+            }
+            else if (state.getTurn()==1){
+                state.setP2Score(state.getP2Score()+state.getRunningScore());
+            }
+            state.setRunningScore(0);
+            int t=(state.getTurn()+1)%players.length;
+            state.setTurn(t);
+            return true;
+        }
+        else if (action instanceof PigRollAction){
+            int dieNum=(int) (Math.random()*6+1);
+            
+        }
         return false;
     }//makeMove
 

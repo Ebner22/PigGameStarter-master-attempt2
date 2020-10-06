@@ -29,9 +29,9 @@ public class PigGameState extends GameState {
     public int getRunningScore(){return runningScore;}
     public int getDieValue(){return dieValue;}
 
-    public boolean setTurn(int t){turn=t; return true;}
-    public boolean setP1Score(int s){p1Score=s; return true;}
-    public boolean setP2Score(int s){p2Score=s; return true;}
-    public boolean setRunningScore(int s){runningScore=s; return true;}
-    public boolean setDieValue(int v){dieValue=v; return true;}
+    public void setTurn(int t){turn=t;}
+    public void setP1Score(int s){p1Score=s;}
+    public void setP2Score(int s){p2Score=s;}
+    public void setRunningScore(int s){runningScore=s;}
+    public void setDieValue(int v){dieValue=v;}
 }

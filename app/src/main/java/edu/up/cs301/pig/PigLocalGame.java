@@ -58,6 +58,7 @@ public class PigLocalGame extends LocalGame {
         }
         else if (action instanceof PigRollAction){
             int dieNum=(int) (Math.random()*6+1);
+            state.setDieValue(dieNum);
             if (dieNum==1){
                 state.setRunningScore(0);
                 int t=(state.getTurn()+1)%players.length;

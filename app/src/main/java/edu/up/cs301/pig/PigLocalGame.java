@@ -60,11 +60,11 @@ public class PigLocalGame extends LocalGame {
             int dieNum=(int) (Math.random()*6+1);
             if (dieNum==1){
                 state.setRunningScore(0);
+                int t=(state.getTurn()+1)%players.length;
+                state.setTurn(t);
             }
             else{
                 state.setRunningScore(state.getRunningScore()+dieNum);
-                int t=(state.getTurn()+1)%players.length;
-                state.setTurn(t);
             }
             return true;
         }
@@ -90,10 +90,10 @@ public class PigLocalGame extends LocalGame {
     @Override
     protected String checkIfGameOver() {
         if (state.getP1Score()>=50){
-            return playerNames[0];
+            return playerNames[0]+" wins with a score of "+state.getP1Score();
         }
         else if (state.getP2Score()>=50){
-            return playerNames[1];
+            return playerNames[1]+" wins with a score of "+state.getP2Score();
         }
         return null;
     }

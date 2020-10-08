@@ -1,0 +1,4 @@
+#Thu Oct 08 14:34:26 PDT 2020
+base.0=C\:\\Users\\Owner\\Documents\\College\\2020_Fall_Online\\Object Oriented Design Lab\\PigGameStarter-master\\PigGameStarter-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+path.0=classes.dex
+renamed.0=classes.dex

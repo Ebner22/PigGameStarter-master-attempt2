@@ -28,6 +28,10 @@ public class PigComputerPlayer extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
+        PigGameState gs=new PigGameState((PigGameState)info);
+        if (playerNum!=gs.getTurn()){return;}//if it's not your turn do nothing
+        int randNum=(int) (Math.random()*2);
+        
         // TODO  You will implement this method
     }//receiveInfo
 

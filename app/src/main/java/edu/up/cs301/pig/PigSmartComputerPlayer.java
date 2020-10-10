@@ -39,6 +39,7 @@ public class PigSmartComputerPlayer extends GameComputerPlayer {
 
         int num=1;
         int difference=myScore/(theirScore+1);
+        if (difference==0){difference=1;}
         int threshold=20;
 
         if (theirScore>25 && myScore<15){

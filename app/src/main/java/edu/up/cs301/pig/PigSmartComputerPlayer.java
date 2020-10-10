@@ -38,11 +38,27 @@ public class PigSmartComputerPlayer extends GameComputerPlayer {
         else{myScore=gs.getP2Score(); theirScore=gs.getP1Score();}
 
         int num=1;
+        int difference=myScore/(theirScore+1);
+        int threshold=20;
 
-        if (myScore>=20){
+        if (theirScore>25 && myScore<15){
+            threshold=20+3/difference;
+        }
+        if (theirScore>40 && myScore<20){
+            threshold=20+4/difference;
+        }
+        if (myScore>20 && theirScore<15){
+            threshold=16;
+        }
+        if (threshold>30){threshold=29;}//don't make the threshold too big
+        if (threshold<12){threshold=13;}//or too small
+        if (gs.getRunningScore()>=threshold){//the point at which it is better to hold
             num=0;
         }
-        
+        if (myScore+gs.getRunningScore()>=50){//holding now means a win. Definitely hold.
+            num=0;
+        }
+
 
         if (num==0){
             PigHoldAction act=new PigHoldAction(this);
